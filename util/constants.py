@@ -1,0 +1,7 @@
+EVENT_CLASSIFIER = 'classifier'
+EVENT_PERFORMANCE_ATTRIBUTE = 'performance_attribute'
+DISTANCE_ATTR = 'distance_attribute'
+EVENT_INDEX = 'event_index'
+IF_INDEXED = 'if_indexed'
+MATCHING_DISTANCE_FUNC = 'distance_func'
+MATCHING_NODE_CONSTRAINT = 'constraints_on_nodes'
