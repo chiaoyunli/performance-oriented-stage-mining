@@ -24,9 +24,6 @@ def show_example_result(stage_performance):
         break
 
 
-log = xes_importer.apply('example_log.xes')
-
-
 def run_example1(log):
     """
     Example 1: Without stage definition: collection of all start/end activities of all cases
@@ -57,12 +54,12 @@ def run_example3(log):
     # Define stages
     stages_def = {'A': {'starts': ['Permit SUBMITTED by EMPLOYEE'],
                     'ends': ['Permit REJECTED by ADMINISTRATION', 'Permit REJECTED by BUDGET OWNER', 'Permit REJECTED by SUPERVISOR', 'Permit REJECTED by DIRECTOR', 'Permit FINAL_APPROVED by SUPERVISOR', 'Permit FINAL_APPROVED by DIRECTOR']},
-             'R': {'starts': ['Request For Payment SUBMITTED by EMPLOYEE'],
-                   'ends': ['Request For Payment REJECTED by ADMINISTRATION', 'Request For Payment REJECTED by BUDGET OWNER', 'Permit REJECTED by SUPERVISOR', 'Payment Handled'],
-                   'matching_param': {'distance_attribute': 'Rfp_id'}},
-             'D': {'starts': ['Declaration SUBMITTED by EMPLOYEE'],
-                   'ends': ['Declaration REJECTED by ADMINISTRATION', 'Declaration REJECTED by BUDGET OWNER', 'Declaration REJECTED by SUPERVISOR', 'Declaration REJECTED by DIRECTOR', 'Payment Handled'],
-                   'matching_param': {'distance_attribute': 'dec_id'}}}
+                  'R': {'starts': ['Request For Payment SUBMITTED by EMPLOYEE'],
+                        'ends': ['Request For Payment REJECTED by ADMINISTRATION', 'Request For Payment REJECTED by BUDGET OWNER', 'Permit REJECTED by SUPERVISOR', 'Payment Handled'],
+                        'matching_param': {'distance_attribute': 'Rfp_id'}},
+                  'D': {'starts': ['Declaration SUBMITTED by EMPLOYEE'],
+                        'ends': ['Declaration REJECTED by ADMINISTRATION', 'Declaration REJECTED by BUDGET OWNER', 'Declaration REJECTED by SUPERVISOR', 'Declaration REJECTED by DIRECTOR', 'Payment Handled'],
+                        'matching_param': {'distance_attribute': 'dec_id'}}}
     # Run the algorithm
     return stage_factory.apply(log, stages_def)
 
