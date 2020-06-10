@@ -1,0 +1,4 @@
+~etworkx==2.3
+pm4py==1.0.24
+PuLP==1.6.9
+networkx==2.4
